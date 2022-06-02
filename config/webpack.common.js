@@ -9,6 +9,14 @@ module.exports = {
     filename: "[name].[hash:4].js",
     path: path.join(__dirname, "../dist"),
   },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        loader: "babel-loader"
+      }
+    ]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "../template.html"),

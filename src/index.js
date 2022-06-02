@@ -1,4 +1,14 @@
-console.log('webpack222')
+import React from "react";
+import ReactDom from "react-dom";
 
-const root = document.getElementById("root")
-root.textContent = "webpack2"
+export default function App() {
+  return (
+    <div>
+      <h2>我是react</h2>
+    </div>
+  );
+}
+
+const root = document.getElementById("root");
+
+ReactDom.render(<App />, root);
