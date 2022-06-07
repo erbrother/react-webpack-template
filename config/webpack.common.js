@@ -20,32 +20,14 @@ module.exports = {
       },
       {
         test: /\.(css)$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: "css-loader",
-            options: {
-              importLoaders: 1,
-            },
-          },
-          {
-            loader: "postcss-loader",
-          },
-        ],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
       {
         test: /\.(less)$/,
         use: [
           MiniCssExtractPlugin.loader,
-          {
-            loader: "css-loader",
-            options: {
-              importLoaders: 2,
-            },
-          },
-          {
-            loader: "postcss-loader",
-          },
+          "css-loader",
+          "postcss-loader",
           "less-loader",
         ],
       },
@@ -53,15 +35,8 @@ module.exports = {
         test: /\.(scss)$/,
         use: [
           MiniCssExtractPlugin.loader,
-          {
-            loader: "css-loader",
-            options: {
-              importLoaders: 2,
-            },
-          },
-          {
-            loader: "postcss-loader",
-          },
+          "css-loader",
+          "postcss-loader",
           "sass-loader",
         ],
       },
@@ -110,5 +85,8 @@ module.exports = {
   externals: {
     react: "React",
     "react-dom": "ReactDOM",
+  },
+  stats: {
+    modules: false,
   },
 };
