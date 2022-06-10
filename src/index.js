@@ -1,6 +1,5 @@
 import React from "react";
-import ReactDom from "react-dom";
-
+import { createRoot } from 'react-dom/client';
 import Home from "./pages/Home/Home.jsx";
 
 export default function App() {
@@ -13,6 +12,6 @@ export default function App() {
   );
 }
 
-const root = document.getElementById("root");
-
-ReactDom.render(<App />, root);
+const container = document.getElementById("root");
+const root = createRoot(container)
+root.render(<App />);
